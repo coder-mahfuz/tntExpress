@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>TNT Express</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="column">
+      <div class="cost">
+        <h2>Get TNT Express Shipping Cost</h2>
+      </div>
+      <form id="form">
+        <div class="form">
+          <div>
+            <label for="account_number">TNT Account Number</label><br>
+            <input type="number" id="account_number" name="account_number"><br>
+          </div>
+
+          <!-- <div>
+            <label for="lname">TNT CIT Username</label><br>
+            <input type="text" id="lname" name="lname">
+          </div>
+
+          <div>
+            <label for="lname">TNT Online Password</label><br>
+            <input type="text" id="lname" name="lname">
+          </div>
+
+          <div>
+            <label for="lname">Origin Suburb</label><br>
+            <input type="text" id="lname" name="lname">
+          </div>
+
+          <div>
+            <label for="origin_state">Origin State</label><br>
+            <select type="text" id="origin_state" name="origin_state" form="form">
+              <option value="NSW">NSW</option>
+              <option value="VIC">VIC</option>
+              <option value="QLD">QLD</option>
+              <option value="ACT">ACT</option>
+              <option value="TAS">TAS</option>
+              <option value="SA">SA</option>
+              <option value="WA">WA</option>
+              <option value="NT">NT</option>
+
+
+            </select>
+          </div>
+
+          <div>
+            <label for="lname">Origin Postcode</label><br>
+            <input type="text" id="lname" name="lname">
+          </div>
+
+          <div>
+            <label for="lname">Number of business days before collection</label><br>
+            <input type="text" id="lname" name="lname">
+          </div>
+
+          <div>
+            <label for="dangerous_goods">Dangerous Goods</label><br>
+            <select type="text" id="dangerous_goods" name="dangerous_goods" form="form">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="add_residential">Add Residential Option</label><br>
+            <select type="text" id="add_residential" name="add_residential" form="form">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="manual_handling">Add Manual Handling Processing (MHP) Fee</label><br>
+            <select type="text" id="manual_handling" name="manual_handling" form="form">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="remote_area">Add Remote Area Pickup (RMP) Fee (if applicable)</label><br>
+            <select type="text" id="remote_area" name="remote_area" form="form">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="lname">Add Remote Area Delivery (RMP) Fee (if applicable)</label><br>
+            <select type="text" id="remote_area_delivery" name="remote_area_delivery" form="form">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="services">Services</label><br>
+            <p>Select the Service(s) for which you wish to obtain a quote. Hold down the control (ctrl) or command
+              button to select multiple options.</p>
+            <select type="text" id="services" name="services" form="form" multiple>
+              <option value="TNT Road Express">TNT Road Express</option>
+              <option value="TNT Overnight Express">TNT Overnight Express</option>
+              <option value="TNT ONFC Satchel">TNT ONFC Satchel</option>
+              <option value="TNT Technology Express - Sensitive Express">TNT Technology Express - Sensitive Express
+              </option>
+              <option value="TNT 12:00 Express">TNT 12:00 Express</option>
+              <option value="TNT 10:00 Express">TNT 10:00 Express</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="handling_charge_type">Handling Charge Type</label><br>
+            <select type="text" id="handling_charge_type" name="handling_charge_type" form="form">
+              <option value="0">Flat Fee</option>
+              <option value="1">Percentage of TNT Shipping Cost</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="lname">Handling Charge</label><br>
+            <input type="text" id="lname" name="lname">
+          </div> -->
+        </div>
+        <button type="submit" id="get_cost">Get Cost</button>
+      </form>
+
+      <div class="cost">
+        <h2>Shiping Cost</h2>
+        <p id="show_cost"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
