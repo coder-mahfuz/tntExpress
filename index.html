@@ -10,139 +10,159 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="column">
-      <div class="cost">
+  <div class="main_container">
+    <div class="container">
+      <div class="main_heading">
         <h2>Get TNT Express Shipping Cost</h2>
       </div>
       <form id="form">
         <div class="form">
-          <div>
-            <label for="account_number">TNT Account Number</label><br>
-            <input type="number" id="account_number" name="account_number"><br>
+
+          <!-- Collectio Details-->
+          <h3>Collection Details</h3>
+          <div class="collection">
+            <!-- suburb -->
+            <div>
+              <label for="csuburb">Suburb</label><br>
+              <input type="text" id="csuburb" name="csuburb"><br>
+            </div>
+            <!-- suburb -->
+
+
+            <!-- stat -->
+            <div>
+              <label for="cstate">State</label><br>
+              <input type="text" id="cstate" name="cstate"><br>
+            </div>
+            <!-- stat -->
+
+            <!-- Post code -->
+            <div>
+              <label for="cpcode">Post code</label><br>
+              <input type="text" id="cpcode" name="cpcode"><br>
+            </div>
+            <!-- Post code -->
           </div>
+          <!-- Collectio Details-->
 
-          <!-- <div>
-            <label for="lname">TNT CIT Username</label><br>
-            <input type="text" id="lname" name="lname">
+          <!-- Delivery Details-->
+          <h3>Delivery Details</h3>
+          <div class="delivery">
+            <!-- suburb -->
+            <div>
+              <label for="dsuburb">Suburb</label><br>
+              <input type="text" id="dsuburb" name="dsuburb"><br>
+            </div>
+            <!-- suburb -->
+
+
+            <!-- stat -->
+            <div>
+              <label for="dstate">State</label><br>
+              <input type="text" id="dstate" name="dstate"><br>
+            </div>
+            <!-- stat -->
+
+            <!-- Post code -->
+            <div>
+              <label for="dpcode">Post code</label><br>
+              <input type="text" id="dpcode" name="dpcode"><br>
+            </div>
+            <!-- Post code -->
+
+            <!-- <div>
+                        <label for="collection_date">Collection Date</label><br>
+                        <select name="collection_date" id="collection_date" form="form">
+                          <option value="26/10/2022">26 Oct</option>
+                          <option value="27/10/2022">27 Oct</option>
+                          <option value="28/10/2022">28 Oct</option>
+                          <option value="31/10/2022">31 Oct</option>
+                          <option value="01/11/2022">01 Nov</option>
+                          <option value="02/11/2022">02 Nov</option>
+                          <option value="03/11/2022">03 Nov</option>
+                        </select>
+                      </div> -->
           </div>
+          <!-- Delivery Details-->
 
-          <div>
-            <label for="lname">TNT Online Password</label><br>
-            <input type="text" id="lname" name="lname">
+          <!-- Dimension -->
+          <h3>Freight Details</h3>
+          <div class="dimension">
+            <div>
+              <label for="goods_description">Description of Goods</label><br>
+              <select name="goods_description" id="goods_description" form="form">
+                <option value="N">NON DOCUMENT (N)</option>
+                <option value="D">DOCUMENT (D)</option>
+              </select>
+            </div>
+
+
+            <div>
+              <label for="quantity">Quantity</label><br>
+              <input type="number" id="quantity" name="quantity"><br>
+            </div>
+
+            <div>
+              <label for="weight">Weight(Kgs)</label><br>
+              <input type="number" id="weight" name="weight"><br>
+            </div>
+
+            <div>
+              <label for="lenth">Lenth(cm)</label><br>
+              <input type="text" id="lenth" name="lenth"><br>
+            </div>
+
+            <div>
+              <label for="width">Width(cm)</label><br>
+              <input type="text" id="width" name="width"><br>
+            </div>
+
+            <div>
+              <label for="height">Height(cm)</label><br>
+              <input type="text" id="height" name="height"><br>
+            </div>
+
           </div>
+          <!-- Dimension -->
 
-          <div>
-            <label for="lname">Origin Suburb</label><br>
-            <input type="text" id="lname" name="lname">
+          <!-- Freight Details  -->
+          <div class="details">
+            <div>
+              <label for="payer">Who Pays</label><br>
+              <select name="payer" id="payer" form="form">
+                <option value="S">SENDER</option>
+              </select>
+            </div>
+
+
+            <div>
+              <label for="collection_date">Your Collection Date?</label><br>
+              <input type="text" id="collection_date" name="collection_date"><br>
+            </div>
+
+            <div>
+              <label for="dgoods">Dangerous Goods?</label><br>
+              <select name="dgoods" id="dgoods" form="form">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </div>
+
           </div>
+          <!-- Freight Details  -->
 
-          <div>
-            <label for="origin_state">Origin State</label><br>
-            <select type="text" id="origin_state" name="origin_state" form="form">
-              <option value="NSW">NSW</option>
-              <option value="VIC">VIC</option>
-              <option value="QLD">QLD</option>
-              <option value="ACT">ACT</option>
-              <option value="TAS">TAS</option>
-              <option value="SA">SA</option>
-              <option value="WA">WA</option>
-              <option value="NT">NT</option>
-
-
-            </select>
-          </div>
-
-          <div>
-            <label for="lname">Origin Postcode</label><br>
-            <input type="text" id="lname" name="lname">
-          </div>
-
-          <div>
-            <label for="lname">Number of business days before collection</label><br>
-            <input type="text" id="lname" name="lname">
-          </div>
-
-          <div>
-            <label for="dangerous_goods">Dangerous Goods</label><br>
-            <select type="text" id="dangerous_goods" name="dangerous_goods" form="form">
-              <option value="false">No</option>
-              <option value="true">Yes</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="add_residential">Add Residential Option</label><br>
-            <select type="text" id="add_residential" name="add_residential" form="form">
-              <option value="false">No</option>
-              <option value="true">Yes</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="manual_handling">Add Manual Handling Processing (MHP) Fee</label><br>
-            <select type="text" id="manual_handling" name="manual_handling" form="form">
-              <option value="false">No</option>
-              <option value="true">Yes</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="remote_area">Add Remote Area Pickup (RMP) Fee (if applicable)</label><br>
-            <select type="text" id="remote_area" name="remote_area" form="form">
-              <option value="false">No</option>
-              <option value="true">Yes</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="lname">Add Remote Area Delivery (RMP) Fee (if applicable)</label><br>
-            <select type="text" id="remote_area_delivery" name="remote_area_delivery" form="form">
-              <option value="false">No</option>
-              <option value="true">Yes</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="services">Services</label><br>
-            <p>Select the Service(s) for which you wish to obtain a quote. Hold down the control (ctrl) or command
-              button to select multiple options.</p>
-            <select type="text" id="services" name="services" form="form" multiple>
-              <option value="TNT Road Express">TNT Road Express</option>
-              <option value="TNT Overnight Express">TNT Overnight Express</option>
-              <option value="TNT ONFC Satchel">TNT ONFC Satchel</option>
-              <option value="TNT Technology Express - Sensitive Express">TNT Technology Express - Sensitive Express
-              </option>
-              <option value="TNT 12:00 Express">TNT 12:00 Express</option>
-              <option value="TNT 10:00 Express">TNT 10:00 Express</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="handling_charge_type">Handling Charge Type</label><br>
-            <select type="text" id="handling_charge_type" name="handling_charge_type" form="form">
-              <option value="0">Flat Fee</option>
-              <option value="1">Percentage of TNT Shipping Cost</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="lname">Handling Charge</label><br>
-            <input type="text" id="lname" name="lname">
-          </div> -->
         </div>
+
         <button type="submit" id="get_cost">Get Cost</button>
       </form>
-
       <div class="cost">
         <h2>Shiping Cost</h2>
         <p id="show_cost"></p>
       </div>
     </div>
-  </div>
 
 
-  <script src="app.js"></script>
+    <script src="fetch.js"></script>
 </body>
 
 </html>

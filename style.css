@@ -1,4 +1,4 @@
-.container {
+.main_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,24 +8,23 @@
 
 input {
   width: 100%;
-  height: 30px;
+  height: 35px;
   border: 1px solid wheat;
 }
 
 label {
-  color: rgb(22, 22, 22);
+  color: rgb(36, 36, 36);
 }
 
 .form div {
   margin-bottom: 20px;
 }
 
-.column {
-  width: 40%;
+.container {
+  width: 950px;
   background-color: antiquewhite;
   padding: 30px 50px;
 }
-
 
 button {
   padding: 10px 25px;
@@ -37,10 +36,41 @@ button {
 
 select {
   width: 100%;
-  height: 30px;
+  height: 40px;
   border: 1px solid wheat;
+  background-color: white;
 }
 
 #services {
   height: 120px;
+}
+
+.dimension,
+.quantity,
+.collection,
+.delivery,
+.account_info,
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dimension div {
+  width: 16%;
+}
+
+.collection div {
+  width: 32%;
+}
+
+.delivery div {
+  width: 32%;
+}
+
+.details div {
+  width: 32%;
+}
+
+h3 {
+  font-size: 17px;
 }
