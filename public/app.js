@@ -51,8 +51,15 @@ function showShippingCost(e) {
 
   fetch("https://www.tntexpress.com.au/Rtt/inputRequest.asp", requestOptions)
     .then(response => response.text())
-    .then(result => console.log(result))
+    .then(result => {
+      let parser = new DOMParser;
+      let xml = parser.parseFromString(result, "application/xml");
+
+      let description = xml.querySelector("description").innerHTML;
+      showCost.textContent = description;
+    })
     .catch(error => console.log('error', error));
 
-
 };
+
+
