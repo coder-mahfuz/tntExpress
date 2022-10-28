@@ -49,7 +49,7 @@ function showShippingCost(e) {
     redirect: 'follow'
   };
 
-  fetch("https://www.tntexpress.com.au/Rtt/inputRequest.asp", requestOptions)
+  fetch("https://proxy.cors.sh/https://www.tntexpress.com.au/Rtt/inputRequest.asp", requestOptions)
     .then(response => response.text())
     .then(result => {
       let parser = new DOMParser;
