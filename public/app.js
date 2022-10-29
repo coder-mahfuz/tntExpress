@@ -16,16 +16,16 @@ const length = document.querySelector('#lenth');
 const width = document.querySelector('#width');
 const height = document.querySelector('#height');
 const payer = document.querySelector('#payer');
-const collectionDate = document.querySelector('#collection_date');
+const shippingDate = document.querySelector('#collection_date');
 const dangerousGoods = document.querySelector('#dgoods');
+
 
 
 const userName = "CIT00000000000144187";
 const password = "prodTNT123";
 const senderAccount = 20194618;
-// const userCurrentLocalDateTime = 
-
-const showCost = document.querySelector('#show_cost');
+const date = new Date();
+const isoDate = date.toISOString();
 
 
 form.addEventListener('submit', showShippingCost);
@@ -40,7 +40,7 @@ function showShippingCost(e) {
   var urlencoded = new URLSearchParams();
   urlencoded.append("username", userName);
   urlencoded.append("password", password);
-  urlencoded.append("xmlRequest", `<?xml version=\"1.0\"?> \n<enquiry xmlns=\"http://www.tntexpress.com.au\"> \n <ratedTransitTimeEnquiry> \n <cutOffTimeEnquiry> \n <collectionAddress> \n <suburb>${collectionSuburb.value}</suburb> \n <postCode>${collectionPostCode.value}</postCode> \n <state>${collectionState.value}</state> \n </collectionAddress> \n <deliveryAddress> \n <suburb>${deliverySuburb.value}</suburb> \n <postCode>${deliveryPostCode.value}</postCode> \n <state>${deliveryState}</state> \n </deliveryAddress> \n <shippingDate>2007-11-05</shippingDate> \n <userCurrentLocalDateTime> \n 2022-10-05T10:00:00 \n </userCurrentLocalDateTime> \n <dangerousGoods> \n <dangerous>${dangerousGoods.value}</dangerous> \n </dangerousGoods> \n <packageLines packageType=\"${goodsDescription.value}\"> \n <packageLine> \n <numberOfPackages>${quantity.value}</numberOfPackages> \n <dimensions unit=\"cm\"> \n <length>${length.value}</length> \n <width>${width.value}</width> \n <height>${height.value}</height> \n </dimensions> \n <weight unit=\"kg\"> \n <weight>${weight.value}</weight> \n </weight> \n </packageLine> \n </packageLines> \n </cutOffTimeEnquiry> \n <termsOfPayment> \n <senderAccount>${senderAccount}</senderAccount> \n <payer>${payer.value}</payer> \n </termsOfPayment> \n </ratedTransitTimeEnquiry> \n</enquiry>`);
+  urlencoded.append("xmlRequest", `<?xml version=\"1.0\"?> \n<enquiry xmlns=\"http://www.tntexpress.com.au\"> \n <ratedTransitTimeEnquiry> \n <cutOffTimeEnquiry> \n <collectionAddress> \n <suburb>${collectionSuburb.value}</suburb> \n <postCode>${collectionPostCode.value}</postCode> \n <state>${collectionState.value}</state> \n </collectionAddress> \n <deliveryAddress> \n <suburb>${deliverySuburb.value}</suburb> \n <postCode>${deliveryPostCode.value}</postCode> \n <state>${deliveryState}</state> \n </deliveryAddress> \n <shippingDate>${shippingDate.value}</shippingDate> \n <userCurrentLocalDateTime> \n ${isoDate} \n </userCurrentLocalDateTime> \n <dangerousGoods> \n <dangerous>${dangerousGoods.value}</dangerous> \n </dangerousGoods> \n <packageLines packageType=\"${goodsDescription.value}\"> \n <packageLine> \n <numberOfPackages>${quantity.value}</numberOfPackages> \n <dimensions unit=\"cm\"> \n <length>${length.value}</length> \n <width>${width.value}</width> \n <height>${height.value}</height> \n </dimensions> \n <weight unit=\"kg\"> \n <weight>${weight.value}</weight> \n </weight> \n </packageLine> \n </packageLines> \n </cutOffTimeEnquiry> \n <termsOfPayment> \n <senderAccount>${senderAccount}</senderAccount> \n <payer>${payer.value}</payer> \n </termsOfPayment> \n </ratedTransitTimeEnquiry> \n</enquiry>`);
 
   var requestOptions = {
     method: 'POST',
@@ -54,9 +54,24 @@ function showShippingCost(e) {
     .then(result => {
       let parser = new DOMParser;
       let xml = parser.parseFromString(result, "application/xml");
+      console.log(xml);
 
-      let description = xml.querySelector("description").innerHTML;
-      showCost.textContent = description;
+      let serviceTitle = xml.getElementsByTagName("description");
+      let servicePrice = xml.getElementsByTagName("price");
+
+
+      for (let index = 0; index < serviceTitle.length; index++) {
+        const serviceTitleList = serviceTitle[index].innerHTML;
+        const servicePriceList = servicePrice[index].innerHTML;
+
+
+        let tag = document.createElement("p");
+        let text = document.createTextNode(`${serviceTitleList} - AUD: ${servicePriceList}`);
+        tag.appendChild(text);
+        let showCost = document.querySelector('#show_cost');
+        showCost.appendChild(tag);
+      }
+
     })
     .catch(error => console.log('error', error));
 
