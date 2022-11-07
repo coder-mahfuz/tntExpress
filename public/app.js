@@ -58,18 +58,25 @@ function showShippingCost(e) {
 
       let serviceTitle = xml.getElementsByTagName("description");
       let servicePrice = xml.getElementsByTagName("price");
-
+      let checkOutForm = document.querySelector('#checkout');
+      checkOutForm.style.display = "block";
 
       for (let index = 0; index < serviceTitle.length; index++) {
         const serviceTitleList = serviceTitle[index].innerHTML;
         const servicePriceList = servicePrice[index].innerHTML;
 
 
-        let tag = document.createElement("p");
-        let text = document.createTextNode(`${serviceTitleList} - AUD: ${servicePriceList}`);
-        tag.appendChild(text);
-        let showCost = document.querySelector('#show_cost');
-        showCost.appendChild(tag);
+        // let tag = document.createElement("p");
+        // let text = document.createTextNode(`${serviceTitleList} - AUD: ${servicePriceList}`);
+        // tag.appendChild(text);
+        // let showCost = document.querySelector('#show_cost');
+        // showCost.appendChild(tag);
+
+        let input = `<input type="radio" id="${serviceTitleList}" value="${servicePriceList}" name="ShippingCost"> \n <label for="${serviceTitleList}">${serviceTitleList} - AUD: ${servicePriceList}</label>`
+        let ShippingCostContainer = document.querySelector('#ShippingCostContainer');
+        ShippingCostContainer.innerHTML += input;
+
+
       }
 
     })
@@ -78,3 +85,7 @@ function showShippingCost(e) {
 };
 
 
+
+
+
+// new form
