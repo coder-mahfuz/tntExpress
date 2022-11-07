@@ -34,6 +34,11 @@ button {
   cursor: pointer;
 }
 
+.ShippingCostContainer {
+  display: flex;
+}
+
+
 #checkout {
   display: none;
 }
