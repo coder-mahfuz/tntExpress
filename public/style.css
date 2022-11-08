@@ -34,7 +34,7 @@ button {
   cursor: pointer;
 }
 
-.ShippingCostContainer {
+#ShippingCostContainer {
   display: flex;
 }
 
